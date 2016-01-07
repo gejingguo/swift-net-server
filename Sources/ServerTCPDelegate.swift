@@ -14,7 +14,7 @@ class ServerTCPDelegate: TCPDelegate {
         //self.server = server
     }
 
-    func onTCPServerNewClient(server: TCPServer, err: TCPError) {
+    func onTCPServerNewClient(server: TCPServer, err: TCPError?) {
         print("tcpserver onnewclient...")
         var client: TCPClient? = nil
         do {
@@ -56,5 +56,9 @@ class ServerTCPDelegate: TCPDelegate {
 
     func onTCPClientSendOut(client: TCPClient) {
 
+    }
+
+    func onTCPClientConnected(client: TCPClient, err: TCPError?) {
+        
     }
 }
