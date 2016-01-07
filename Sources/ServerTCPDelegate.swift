@@ -26,7 +26,7 @@ class ServerTCPDelegate: TCPDelegate {
             try server.accept(client!)
             client!.flag = server.flag
 
-            print("accept new client")
+            print("accept new client addr: \(client?.peerAddr)")
         } catch {
             print("ontcpnew err: \(error)")
             if client != nil {
